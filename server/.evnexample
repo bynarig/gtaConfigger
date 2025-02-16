@@ -1,0 +1,2 @@
+NODE_ENV=developing
+PORT=3000
