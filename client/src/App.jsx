@@ -1,11 +1,16 @@
 import MainPage from "./pages/main/MainPage"
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
 
   return (
-    <>
-      <MainPage />
-    </>
+    <BrowserRouter>
+      <Routes>
+          <Route path="/" element={<MainPage />} />
+          {/*<Route path="blogs" element={<Blogs />} />*/}
+          {/*<Route path="contact" element={<Contact />} />*/}
+          {/*<Route path="*" element={<NoPage />} />*/}
+      </Routes>
+    </BrowserRouter>
   )
 }
 
