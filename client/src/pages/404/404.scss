@@ -1,12 +1,25 @@
-.not-found{
-	background-image: url("/bg-picture.png") ;
+.not-found {
+	@include no-select;
+	background-image: url("/bg-picture.png");
 	background-size: cover;
 	height: 100vh;
-  background-color: rgba(37, 37, 37, 1);
-  background-blend-mode: overlay;
+	background-color: rgba(0, 0, 0, 0.9);
+	background-blend-mode: overlay;
 	color: white;
-	h1{
+
+	h1 {
 		text-align: center;
 		font-size: 300px;
+	}
+
+	p {
+		text-align: center;
+		font-size: 50px;
+
+	}
+
+	button {
+		display: flex;
+
 	}
 }

@@ -65,6 +65,15 @@ $vibrant-fills-primary: rgba(127, 127, 127, 0.5);
 $vibrant-fills-secondary: rgba(127, 127, 127, 0.4);
 $vibrant-fills-tertiary: rgba(127, 127, 127, 0.2);
 
+@mixin no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
         `
       }
     }
