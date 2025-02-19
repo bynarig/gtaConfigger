@@ -2,11 +2,11 @@ import fs from "fs";
 import xml2js from "xml2js";
 import { logger } from "../utils/logger.js";
 
+
 class OptimiserController {
 	optimiseSettings (req, res) {
 		const xmlFile = "./src/data/preview-settings.xml"; // replace with the actual file path
 		const xmlData = fs.readFileSync(xmlFile, "utf8");
-		console.log(req.body)
 		// Parse the XML file
 		const parser = new xml2js.Parser();
 		let result;
@@ -28,12 +28,7 @@ class OptimiserController {
 			// Convert the modified XML object back to a string
 			const builder = new xml2js.Builder();
 			const modifiedXml = builder.buildObject(result);
-
-			// Save the updated XML file
-			// fs.writeFileSync(xmlFile, modifiedXml);
-
-			// Return the modified XML file as a response
-			console.log(modifiedXml); // log the modified XML for debugging
+			logger.info("Setting generated")
 			res.send(modifiedXml);
 		});
 	}

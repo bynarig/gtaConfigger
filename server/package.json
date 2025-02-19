@@ -13,11 +13,22 @@
     "debug": "^4.4.0",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "http-errors": "^2.0.0",
     "ioredis": "^5.5.0",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.10.1",
     "nodemon": "^3.1.9",
+    "passport-google-oauth20": "^2.0.0",
     "redis": "^4.7.0",
     "winston": "^3.17.0",
     "xml2js": "^0.6.2"
+  },
+  "imports": {
+    "#utils/*": "./src/utils/*",
+    "#controllers/*": "./src/controllers/*",
+    "#data/*": "./src/data/*",
+    "#dtos/*": "./src/dtos/*",
+    "#models/*": "./src/models/*",
+    "#middlewares/*": "./src/middlewares/*"
   }
 }
