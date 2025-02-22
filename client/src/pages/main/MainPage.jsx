@@ -7,6 +7,7 @@ import "../../theme/segmented/segmented.scss";
 import { useTranslation } from "react-i18next";
 
 
+
 export default function MainPage () {
 	const [PlayerDistanceSliderValue, setPlayerDistanceSlider] = useState(0);
 	const [VehicleDistanceSliderValue, setVehicleDistanceSlider] = useState(0);
@@ -51,7 +52,7 @@ export default function MainPage () {
 		const query = new URLSearchParams({ json: JSON.stringify(settings) });
 
 		try {
-			const response = await fetch(`http://localhost:3000/optimisation/optimise-settings?${query}`, {
+			const response = await fetch(`http://localhost:8905/optimisation/optimise-settings`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json"

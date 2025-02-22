@@ -1,21 +1,22 @@
-import Redis from 'redis';
+import { createClient } from 'redis'; // Correct import for Redis v4.x
 import { InternalServerError } from '#utils/errors.js';
+import { logger } from "#utils/logger.js";
 
 let redisClient;
 
 // Function to initialize Redis client connection
 async function initializeRedis() {
   if (!redisClient) {
-    redisClient = Redis.createClient();
+    redisClient = createClient(); // Use createClient directly
     // If running in Docker, use the Docker URL
-    // redisClient = Redis.createClient({ url: 'redis://redis:6379' });
+    // redisClient = createClient({ url: 'redis://redis:6379' });
 
-    redisClient.on('error', (err) => console.log('Redis Client Error', err));
+    redisClient.on('error', (err) => logger.info('Redis Client Error', err));
 
     try {
       await redisClient.connect();
     } catch (error) {
-      console.error('Failed to connect to Redis', error);
+      logger.error('Failed to connect to Redis', error);
       throw new InternalServerError(500, 'Failed to connect to Redis');
     }
   }

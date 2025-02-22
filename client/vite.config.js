@@ -4,6 +4,12 @@ import react from '@vitejs/plugin-react-swc'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+   base: './',  // Set this to your subfolder name
+  build: {
+    outDir: 'dist', // Output directory
+    assetsDir: 'assets', // Directory for assets in the build
+    emptyOutDir: true, // Clear the output directory before building
+  },
   css: {
     preprocessorOptions: {
       scss: {

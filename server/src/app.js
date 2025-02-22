@@ -7,7 +7,7 @@ import { DB, connect } from "#utils/mongooseConnect.js";
 import cookieParser from "cookie-parser"; // DB connecting
 const { models } = DB;
 const app = express();
-const port = 3000;
+const port = 8905;
 
 app.use((req, res, next) => {
   // now in every request there will be models, no need to import everywhere

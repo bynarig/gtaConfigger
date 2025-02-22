@@ -5,11 +5,10 @@ import StartPage from "./pages/start/StartPage.jsx";
 function App() {
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <Routes>
           <Route path="/main" element={<MainPage />} />
           <Route path="/" element={<StartPage />} />
-          {/*<Route path="contact" element={<Contact />} />*/}
           <Route path="/*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

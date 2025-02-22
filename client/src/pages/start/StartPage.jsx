@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./StartPage.scss";
 
+
+
 export default function StartPage() {
   const [showInitialText, setShowInitialText] = useState(true);
 
