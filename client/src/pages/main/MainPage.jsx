@@ -1,12 +1,7 @@
 import "./MainPage.scss";
 import { useState } from "react";
 import Slider from "rc-slider";
-import "../../theme/slider/slider.scss";
-// import Segmented from 'rc-segmented';
-import "../../theme/segmented/segmented.scss";
 import { useTranslation } from "react-i18next";
-
-
 
 export default function MainPage () {
 	const [PlayerDistanceSliderValue, setPlayerDistanceSlider] = useState(0);
@@ -83,7 +78,7 @@ export default function MainPage () {
 		  <div className="header">
 
 			  <h1>Load Distance</h1>
-			  <img className="image" src="/gta-logo.png" alt=""/>
+			  <img className="image" src="gta-logo.svg" alt=""/>
 		  </div>
 
 		  <div className="distance-sliders">

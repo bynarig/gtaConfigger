@@ -1,19 +1,23 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
+import path from "path";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
-   base: './',  // Set this to your subfolder name
-  build: {
-    outDir: 'dist', // Output directory
-    assetsDir: 'assets', // Directory for assets in the build
-    emptyOutDir: true, // Clear the output directory before building
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `
+	plugins: [react()],
+	base: "./",  // Set this to your subfolder name
+	build: {
+		outDir: "dist", // Output directory
+		assetsDir: "assets", // Directory for assets in the build
+		emptyOutDir: true // Clear the output directory before building
+	},
+	 // alias: [
+   //          { find: '@', replacement: path.resolve(__dirname, 'src') },
+   //      ],
+	css: {
+		preprocessorOptions: {
+			scss: {
+				additionalData: `
           /* Color styles */
 $colors-red: rgba(255, 59, 48, 1);
 $colors-orange: rgba(255, 149, 0, 1);
@@ -81,7 +85,7 @@ $vibrant-fills-tertiary: rgba(127, 127, 127, 0.2);
 }
 
         `
-      }
-    }
-  }
-})
+			}
+		}
+	}
+});

@@ -1,12 +1,10 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.scss'
-import './theme.scss'
-import App from './App.jsx'
-import "./utils/localiser.js"
+import {StrictMode} from 'react';
+import {createRoot} from 'react-dom/client';
+import App from './app/App.jsx';
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
   </StrictMode>,
-)
+);
