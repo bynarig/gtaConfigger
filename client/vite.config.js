@@ -7,7 +7,6 @@ import svgr from 'vite-plugin-svgr';
 import * as path from 'path';
 // https://vite.dev/config/
 
-
 export default defineConfig({
   plugins: [
     viteCommonjs(),
@@ -16,22 +15,20 @@ export default defineConfig({
     babel({extensions: ['.ts', '.tsx'], babelHelpers: 'bundled'}),
     checker({typescript: true}),
   ],
-	base: "./",  // Set this to your subfolder name
-	build: {
-		outDir: "dist", // Output directory
-		assetsDir: "assets", // Directory for assets in the build
-		emptyOutDir: true // Clear the output directory before building
-	},
-	resolve: {
-			 alias: [
-            { find: '@', replacement: path.resolve(__dirname, 'src') },
-        ],
-	},
+  base: './', // Set this to your subfolder name
+  build: {
+    outDir: 'dist', // Output directory
+    assetsDir: 'assets', // Directory for assets in the build
+    emptyOutDir: true, // Clear the output directory before building
+  },
+  resolve: {
+    alias: [{find: '@', replacement: path.resolve(__dirname, 'src')}],
+  },
 
-	css: {
-		preprocessorOptions: {
-			scss: {
-				additionalData: `
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
           /* Color styles */
 $colors-red: rgba(255, 59, 48, 1);
 $colors-orange: rgba(255, 149, 0, 1);
@@ -98,8 +95,8 @@ $vibrant-fills-tertiary: rgba(127, 127, 127, 0.2);
   user-select: none;
 }
 
-        `
-			}
-		}
-	}
+        `,
+      },
+    },
+  },
 });

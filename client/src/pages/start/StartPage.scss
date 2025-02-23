@@ -1,81 +1,77 @@
 .start-page {
-	@include no-select;
-	background-image: url("/bg-picture.png");
-	background-size: cover;
-	height: 100vh;
-	background-color: rgba(0, 0, 0, 0.9);
-	background-blend-mode: overlay;
-	color: white;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	position: relative;
+  @include no-select;
+  background-image: url('/bg-picture.png');
+  background-size: cover;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  background-blend-mode: overlay;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 
-	h1 {
-		text-align: center;
-		font-size: 70px;
-	}
+  h1 {
+    text-align: center;
+    font-size: 70px;
+  }
 
-	.arrow-button {
-		// ... existing styles
-		border-radius: 100px;
-		background-image: url('/arrow-button-next.svg');
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
-		width: 50px; // adjust the width to fit your SVG
-		height: 50px; // adjust the height to fit your SVG
-		position: absolute;
-		top: 63%; // adjust this value to position the button under the text
-		left: 50%;
-		transform: translate(-50%, 0);
-	}
+  .arrow-button {
+    // ... existing styles
+    border-radius: 100px;
+    background-image: url('/arrow-button-next.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50px; // adjust the width to fit your SVG
+    height: 50px; // adjust the height to fit your SVG
+    position: absolute;
+    top: 63%; // adjust this value to position the button under the text
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
 
+  .button-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px; // adjust the margin to your liking
 
-	.button-container {
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
-		margin-top: 20px; // adjust the margin to your liking
+    .button-1,
+    .button-2 {
+      margin: 10px;
+      padding: 40px;
+      border: none;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-		.button-1, .button-2 {
-			margin:10px;
-			padding: 40px ;
-			border:none;
-			border-radius:  20px;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
+      img {
+        width: 100px; // adjust the width to fit your SVG
+        height: 100px; // adjust the height to fit your SVG
+        margin-bottom: 40px;
+      }
 
+      span {
+        font-size: 16px; // adjust the font size to your liking
+        opacity: 0; // hide the text by default
+        transition: opacity 0.2s ease-in-out; // add a transition effect
+      }
 
-
-			img {
-				width: 100px; // adjust the width to fit your SVG
-				height: 100px; // adjust the height to fit your SVG
-				margin-bottom: 40px;
-			}
-
-			span {
-				font-size: 16px; // adjust the font size to your liking
-				opacity: 0; // hide the text by default
-				transition: opacity 0.2s ease-in-out; // add a transition effect
-			}
-
-			&:hover {
-				span {
-					opacity: 1; // show the text on hover
-				}
-				border: 2px solid #fff;
-			}
-		}
-		.button-1{
-			margin-right:30px;
-		}
-		.button-2{
-			margin-left:30px;
-		}
-
-
-	}
+      &:hover {
+        span {
+          opacity: 1; // show the text on hover
+        }
+        border: 2px solid #fff;
+      }
+    }
+    .button-1 {
+      margin-right: 30px;
+    }
+    .button-2 {
+      margin-left: 30px;
+    }
+  }
 }

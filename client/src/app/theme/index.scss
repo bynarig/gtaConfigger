@@ -1,16 +1,15 @@
-body{
+body {
   background-color: rgb(27, 27, 27);
 }
-
 
 //FONTS SECTION
 
 @font-face {
   font-family: 'SF-Pro-Display-Regular';
-  src: local('SF-Pro-Display-Regular'), url('/fonts/SF-Pro-Display-Regular.otf') format('otf');
+  src:
+    local('SF-Pro-Display-Regular'),
+    url('/fonts/SF-Pro-Display-Regular.otf') format('otf');
 }
-
-
 
 /* RESET ALL MARGINS, PADDINGS, AND OTHER STYLES */
 // --------------------------------------------------
@@ -31,15 +30,56 @@ body {
 }
 
 // Reset headings, paragraphs, and other text elements
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
-a, abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strong, sub, sup, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
   margin: 0;
   padding: 0;
   border: 0;
@@ -50,7 +90,8 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 
 // Reset lists
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
@@ -61,7 +102,11 @@ a {
 }
 
 // Reset forms
-button, input, optgroup, select, textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
   margin: 0;
   padding: 0;
   border: 0;
@@ -84,14 +129,27 @@ table {
 }
 
 // Reset images and embedded content
-img, embed, iframe, object, video {
+img,
+embed,
+iframe,
+object,
+video {
   max-width: 100%;
   height: auto;
   border: 0;
 }
 
 // Reset HTML5 elements
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }

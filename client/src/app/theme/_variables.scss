@@ -1,6 +1,4 @@
-
-
-// ALL STYLES ARE INTO VITE CONFIG	
+// ALL STYLES ARE INTO VITE CONFIG
 
 /* Color styles */
 $colors-red: rgba(255, 59, 48, 1);
@@ -58,8 +56,6 @@ $separators-non-opaque: rgba(84, 84, 86, 0.34);
 $vibrant-fills-primary: rgba(127, 127, 127, 0.5);
 $vibrant-fills-secondary: rgba(127, 127, 127, 0.4);
 $vibrant-fills-tertiary: rgba(127, 127, 127, 0.2);
-
-
 
 @mixin no-select {
   -webkit-touch-callout: none;

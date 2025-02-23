@@ -1,8 +1,7 @@
 import MainPage from '#/pages/main/MainPage.js';
 import {Route, Routes} from 'react-router-dom';
 
-
-function UserRouter () {
+function UserRouter() {
   return (
     <Routes>
       <Route path="/login" element={<MainPage />} />

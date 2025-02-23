@@ -10,11 +10,11 @@
   "endOfLine": "lf",
   "importOrder": [
     "<THIRD_PARTY_MODULES>",
-    "@pages",
-    "^@widgets",
-    "^@features",
-    "^@entities",
-    "^@shared",
+    "#/pages",
+    "^#/widgets",
+    "^#/features",
+    "^#/entities",
+    "^#/shared",
     "^[./]"
   ],
   "importOrderSeparation": true,

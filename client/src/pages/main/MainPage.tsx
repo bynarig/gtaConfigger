@@ -1,14 +1,14 @@
 import './MainPage.scss';
-import { useState } from 'react';
+import {useState} from 'react';
 import Slider from 'rc-slider';
-import { useTranslation } from 'react-i18next';
+import {useTranslation} from 'react-i18next';
 
 export default function MainPage() {
   const [PlayerDistanceSliderValue, setPlayerDistanceSlider] = useState<number | number[]>(0);
   const [VehicleDistanceSliderValue, setVehicleDistanceSlider] = useState<number | number[]>(0);
   const [TerrainDistanceSliderValue, setTerrainDistanceSlider] = useState<number | number[]>(0);
   const [fileUrl, setFileUrl] = useState<string | null>(null);
-  const { i18n, t } = useTranslation();
+  const {i18n, t} = useTranslation();
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -119,7 +119,9 @@ export default function MainPage() {
         </div>
       </div>
       <div className="buttons-group">
-        <button className="send-button" onClick={sendSettingsToServer}>Generate my settings</button>
+        <button className="send-button" onClick={sendSettingsToServer}>
+          Generate my settings
+        </button>
         {fileUrl && (
           <a href={fileUrl} download="settings.xml">
             <button className="download-button">Download</button>
