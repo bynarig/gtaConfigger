@@ -10,7 +10,7 @@ export default function StartPage() {
     setShowInitialText(false);
   };
 
-  const handleButtonPress = (path) => {
+  const handleButtonPress = (path: string) => {
     window.location.href = path; // Use window.location.href for navigation
   };
 
