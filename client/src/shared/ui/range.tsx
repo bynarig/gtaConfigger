@@ -19,4 +19,3 @@ export default function Range({min, max, defaultValue, step, onChange}: RangePro
     />
   );
 }
-

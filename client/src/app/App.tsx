@@ -1,5 +1,5 @@
-import Index from './router';
 import './theme';
+import Index from './router';
 import '#/shared/locale';
 
 function App() {

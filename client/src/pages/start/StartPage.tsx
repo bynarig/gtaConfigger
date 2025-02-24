@@ -20,7 +20,7 @@ export default function StartPage() {
             Welcome to
             <br /> GTA V configurator
           </h1>
-          <button className="arrow-button" onClick={handleClick} />
+          <button type="button" className="arrow-button" onClick={handleClick} />
         </>
       ) : (
         <>
@@ -29,11 +29,21 @@ export default function StartPage() {
             <br /> gameplay
           </h1>
           <div className="button-container">
-            <div className="button-1" onClick={() => handleButtonPress('/main')}>
+            <div
+              role="button"
+              tabIndex={0}
+              className="button-1"
+              onClick={() => handleButtonPress('/main')}
+            >
               <img src="sun.svg" alt="" />
               <span className="button-text">chilly</span>
             </div>
-            <div className="button-2" onClick={() => handleButtonPress('/main')}>
+            <div
+              role="button"
+              tabIndex={0}
+              className="button-2"
+              onClick={() => handleButtonPress('/main')}
+            >
               <img src="flexible.svg" alt="" />
               <span className="button-text">manual setup</span>
             </div>

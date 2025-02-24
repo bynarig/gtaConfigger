@@ -1,4 +1,4 @@
-import {translate} from '#/shared/locale';
+import {Translate} from '#/shared/locale';
 import {useState} from 'react';
 import Range from '#/shared/ui/range';
 import {sendSettingsToServer} from '#/entities/fileOptimisation';
@@ -28,11 +28,10 @@ export default function SettingsPicker() {
     setTerrainDistanceSlider(val);
   };
 
-
   return (
     <>
       <div className="distance-sliders">
-        <h3>{translate('MainPage.player')}</h3>
+        <h3>{Translate('MainPage.player')}</h3>
         <div className="slider-info">
           <Range
             min={-3}
@@ -44,7 +43,7 @@ export default function SettingsPicker() {
           <h2>{Math.round(getFirstValue(PlayerDistanceSliderValue) * 10) / 10}</h2>
         </div>
 
-        <h3>{translate('MainPage.vehicles')}</h3>
+        <h3>{Translate('MainPage.vehicles')}</h3>
         <div className="slider-info">
           <Range
             min={-3}
@@ -56,7 +55,7 @@ export default function SettingsPicker() {
           <h2>{Math.round(getFirstValue(VehicleDistanceSliderValue) * 10) / 10}</h2>
         </div>
 
-        <h3>{translate('MainPage.terrain')}</h3>
+        <h3>{Translate('MainPage.terrain')}</h3>
         <div className="slider-info">
           <Range
             min={-3}
@@ -69,10 +68,21 @@ export default function SettingsPicker() {
         </div>
       </div>
       <div className="buttons-group">
-        <Button onClick={async () => setFileUrl(await sendSettingsToServer(getFirstValue(PlayerDistanceSliderValue), getFirstValue(VehicleDistanceSliderValue), getFirstValue(TerrainDistanceSliderValue)))} name="Generate setings"/>
+        <Button
+          onClick={async () =>
+            setFileUrl(
+              await sendSettingsToServer(
+                getFirstValue(PlayerDistanceSliderValue),
+                getFirstValue(VehicleDistanceSliderValue),
+                getFirstValue(TerrainDistanceSliderValue),
+              ),
+            )
+          }
+          name="Generate setings"
+        />
         {fileUrl && (
           <a href={fileUrl} download="settings.xml">
-            <Button name="Download" onClick={() => setFileUrl(null)}/>
+            <Button name="Download" onClick={() => setFileUrl(null)} />
           </a>
         )}
       </div>

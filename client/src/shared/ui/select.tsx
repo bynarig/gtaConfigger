@@ -1,3 +1,5 @@
+import React from 'react';
+
 type Option = {
   value: string;
   label: string;
@@ -8,7 +10,7 @@ type SelectProps = {
   onChange: (selectedValue: string) => void; // Callback for selected value
 };
 
-export default function Select({ options, onChange }: SelectProps) {
+export default function Select({options, onChange}: SelectProps) {
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedValue = event.target.value; // Get the selected value
     onChange(selectedValue); // Notify the parent component

@@ -11,6 +11,4 @@ if (rootElement) {
       <App />
     </StrictMode>,
   );
-} else {
-  console.error('Failed to find the root element');
 }
