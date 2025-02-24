@@ -20,7 +20,7 @@ export default function StartPage() {
             Welcome to
             <br /> GTA V configurator
           </h1>
-          <button className="arrow-button" onClick={handleClick}></button>
+          <button className="arrow-button" onClick={handleClick} />
         </>
       ) : (
         <>
