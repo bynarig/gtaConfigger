@@ -4,7 +4,7 @@ export const sendSettingsToServer = async (
   PlayerDistanceSliderValue: number,
   VehicleDistanceSliderValue: number,
   TerrainDistanceSliderValue: number,
-): Promise<string | undefined> => {
+): Promise<any> => {
   try {
     const settings = {
       settings: {

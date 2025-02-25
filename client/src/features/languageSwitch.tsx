@@ -2,9 +2,9 @@ import Select from '#/shared/ui/Select';
 import {useTranslation} from 'react-i18next';
 
 const languages = [
-  {value: 'en', label: 'English'},
-  {value: 'ua', label: 'Українська'},
-  {value: 'ru', label: 'Русский'},
+  {value: 'en', label: '🇺🇸'},
+  {value: 'ua', label: '🇺🇦'},
+  {value: 'ru', label: '🇷🇺'},
 ];
 
 export default function LanguageSwitch() {

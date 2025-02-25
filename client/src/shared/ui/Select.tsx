@@ -18,7 +18,7 @@ export default function Select({options, onChange}: SelectProps) {
 
   return (
     <select
-      className="select select-bordered w-full max-w-xs"
+      className="select select-ghost w-full max-w-xs"
       onChange={handleChange} // Attach the onChange handler
     >
       {options.map((option) => (

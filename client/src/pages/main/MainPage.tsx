@@ -1,13 +1,14 @@
-import './MainPage.scss';
-import LanguageSwitch from '#/features/languageSwitch';
 import SettingsPicker from '#/widgets/settingsPicker';
+import Navbar from '#/widgets/Navbar';
+import Footer from '#/widgets/Footer';
 
 export default function MainPage() {
   return (
     <div className="main-page">
-      <LanguageSwitch />
-      <h1>Load Distance</h1>
+      <Navbar />
+      <h1 className="text-6xl">Load Distance</h1>
       <SettingsPicker />
+      <Footer />
     </div>
   );
 }

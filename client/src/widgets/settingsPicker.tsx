@@ -29,10 +29,10 @@ export default function SettingsPicker() {
   };
 
   return (
-    <>
+    <div className="ml-7 mt-5 mb-5">
       <div className="distance-sliders">
         <h3>{Translate('MainPage.player')}</h3>
-        <div className="slider-info">
+        <div className="slider-info flex">
           <Range
             min={-3}
             max={3}
@@ -40,11 +40,11 @@ export default function SettingsPicker() {
             defaultValue={getFirstValue(PlayerDistanceSliderValue)}
             onChange={(selectedValue) => handlePlayerDistanceSlider(parseFloat(selectedValue))}
           />
-          <h2 >{Math.round(getFirstValue(PlayerDistanceSliderValue) * 10) / 10}</h2>
+          <h2 className="ml-3">{Math.round(getFirstValue(PlayerDistanceSliderValue) * 10) / 10}</h2>
         </div>
 
         <h3>{Translate('MainPage.vehicles')}</h3>
-        <div className="slider-info">
+        <div className="slider-info flex">
           <Range
             min={-3}
             max={3}
@@ -52,11 +52,11 @@ export default function SettingsPicker() {
             defaultValue={getFirstValue(VehicleDistanceSliderValue)}
             onChange={(selectedValue) => handleVehicleDistanceSlider(parseFloat(selectedValue))}
           />
-          <h2>{Math.round(getFirstValue(VehicleDistanceSliderValue) * 10) / 10}</h2>
+          <h2 className="ml-3">{Math.round(getFirstValue(VehicleDistanceSliderValue) * 10) / 10}</h2>
         </div>
 
         <h3>{Translate('MainPage.terrain')}</h3>
-        <div className="slider-info">
+        <div className="slider-info flex">
           <Range
             min={-3}
             max={3}
@@ -64,7 +64,7 @@ export default function SettingsPicker() {
             defaultValue={getFirstValue(TerrainDistanceSliderValue)}
             onChange={(selectedValue) => handleTerrainDistanceSlider(parseFloat(selectedValue))}
           />
-          <h2>{Math.round(getFirstValue(TerrainDistanceSliderValue) * 10) / 10}</h2>
+          <h2 className="ml-3">{Math.round(getFirstValue(TerrainDistanceSliderValue) * 10) / 10}</h2>
         </div>
       </div>
       <div className="buttons-group">
@@ -86,6 +86,6 @@ export default function SettingsPicker() {
           </a>
         )}
       </div>
-    </>
+    </div>
   );
 }
