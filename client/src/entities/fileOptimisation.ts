@@ -4,7 +4,7 @@ export const sendSettingsToServer = async (
   PlayerDistanceSliderValue: number,
   VehicleDistanceSliderValue: number,
   TerrainDistanceSliderValue: number,
-): Promise<any> => {
+): Promise<string | undefined> => {
   try {
     const settings = {
       settings: {
@@ -29,11 +29,10 @@ export const sendSettingsToServer = async (
 
     if (response.status === 200) {
       const blob = await response.data;
-      const fileURL = URL.createObjectURL(blob);
-      return fileURL;
+      return URL.createObjectURL(blob);
     }
   } catch (e) {
-    return e;
+    return undefined;
   }
-  return null;
+  return undefined;
 };

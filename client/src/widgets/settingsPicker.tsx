@@ -1,8 +1,8 @@
 import {Translate} from '#/shared/locale';
 import {useState} from 'react';
-import Range from '#/shared/ui/range';
+import Range from '#/shared/ui/Range';
 import {sendSettingsToServer} from '#/entities/fileOptimisation';
-import Button from '#/shared/ui/button';
+import Button from '#/shared/ui/Button';
 
 export default function SettingsPicker() {
   const getFirstValue = (value: number | number[]): number => {
@@ -40,7 +40,7 @@ export default function SettingsPicker() {
             defaultValue={getFirstValue(PlayerDistanceSliderValue)}
             onChange={(selectedValue) => handlePlayerDistanceSlider(parseFloat(selectedValue))}
           />
-          <h2 className='text-2xl'>{Math.round(getFirstValue(PlayerDistanceSliderValue) * 10) / 10}</h2>
+          <h2 >{Math.round(getFirstValue(PlayerDistanceSliderValue) * 10) / 10}</h2>
         </div>
 
         <h3>{Translate('MainPage.vehicles')}</h3>

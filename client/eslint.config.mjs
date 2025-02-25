@@ -1,10 +1,11 @@
 import prettier from 'eslint-plugin-prettier';
+import react from 'eslint-plugin-react';
 import globals from 'globals';
-import cypress from 'eslint-plugin-cypress';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import js from '@eslint/js';
 import {FlatCompat} from '@eslint/eslintrc';
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -21,6 +22,7 @@ export default [
   {
     plugins: {
       prettier,
+      react
     },
 
     languageOptions: {
@@ -37,9 +39,9 @@ export default [
   {
     files: ['./cypress/**'],
 
-    plugins: {
-      cypress,
-    },
+    plugins: [
+      'cypress',
+    ],
 
     languageOptions: {
       globals: {
@@ -57,12 +59,12 @@ export default [
   },
   ...compat
     .extends(
-      'airbnb',
-      'airbnb/hooks',
-      'airbnb-typescript',
       'prettier',
       'eslint:recommended',
       'plugin:import/recommended',
+      'plugin:jsx-a11y/recommended',
+      'plugin:react/recommended',
+      'plugin:@typescript-eslint/recommended',
     )
     .map((config) => ({
       ...config,
@@ -77,6 +79,9 @@ export default [
 
       parserOptions: {
         project: './tsconfig.json',
+        'ecmaFeatures': {
+          'jsx': true,
+        },
       },
     },
 
@@ -94,6 +99,8 @@ export default [
     },
 
     rules: {
+      'react/jsx-uses-react': 'error',
+      'react/jsx-uses-vars': 'error',
       'jsx-a11y/control-has-associated-label': 'off',
       'jsx-a11y/click-events-have-key-events': 'off',
       'class-methods-use-this': 'warn',

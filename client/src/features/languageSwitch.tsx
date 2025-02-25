@@ -1,4 +1,4 @@
-import Select from '#/shared/ui/select';
+import Select from '#/shared/ui/Select';
 import {useTranslation} from 'react-i18next';
 
 const languages = [
