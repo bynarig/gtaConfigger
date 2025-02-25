@@ -1,4 +1,4 @@
-import './theme';
+import './theme/index.scss';
 import Index from './router';
 import '#/shared/locale';
 
