@@ -1,16 +1,27 @@
+// userSlice.js
 import {createSlice} from '@reduxjs/toolkit';
 
 interface UserState {
   isLogged: boolean,
-  id?: string,
-  name?: string,
-  email?: string,
-  role?: string
+  id: string | null,
+  name: string | null,
+  surname: string | null,
+  email: string | null,
+  role: string | null
 }
 
-const initialState: UserState = {
-  isLogged: false,
-};
+// Check localStorage for existing user data
+const storedUser = localStorage.getItem('user');
+const initialState: UserState = storedUser
+  ? JSON.parse(storedUser)
+  : {
+    isLogged: false,
+    id: null,
+    name: null,
+    surname: null,
+    email: null,
+    role: null,
+  };
 
 const userSlice = createSlice({
   name: 'user',
@@ -20,15 +31,23 @@ const userSlice = createSlice({
       state.isLogged = true;
       state.id = action.payload.id;
       state.name = action.payload.name;
+      state.surname = action.payload.surname;
       state.email = action.payload.email;
       state.role = action.payload.role;
+
+      // Save user data to localStorage
+      localStorage.setItem('user', JSON.stringify(state));
     },
     logout(state) {
       state.isLogged = false;
-      state.id = undefined;
-      state.name = undefined;
-      state.email = undefined;
-      state.role = undefined;
+      state.id = null;
+      state.name = null;
+      state.surname = null;
+      state.email = null;
+      state.role = null;
+
+      // Clear user data from localStorage
+      localStorage.removeItem('user');
     },
   },
 });
