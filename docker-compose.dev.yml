@@ -3,29 +3,29 @@ services:
   server:
     build:
       context: ./server
-      dockerfile: Dockerfile  # Dockerfile path (default)
+      dockerfile: Dockerfile
       args:
-        NODE_ENV: development  # Build argument for development
+        NODE_ENV: development
     ports:
       - "8905:8905"
     volumes:
-      - ./server:/app  # Mounts server code from host to container
-      - /app/node_modules  # Prevents overwriting node_modules
-    command: pnpm run dev  # Start with nodemon for hot-reload
+      - ./server:/app
+      - /app/node_modules
+    command: pnpm run dev
     environment:
       - NODE_ENV=development
 
   client:
     build:
       context: ./client
-      dockerfile: Dockerfile  # Dockerfile path (default)
+      dockerfile: Dockerfile
       args:
-        NODE_ENV: development  # Build argument for development
+        NODE_ENV: development
     ports:
       - "8904:8904"
     volumes:
-      - ./client:/app  # Mounts client code from host to container
+      - ./client:/app
       - /app/node_modules
-    command: pnpm run dev  # Runs Vite dev server for hot-reload
+    command: pnpm run dev
     environment:
       - NODE_ENV=development

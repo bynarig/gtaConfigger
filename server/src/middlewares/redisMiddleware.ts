@@ -51,8 +51,8 @@ export default () => {
       };
 
       return next();
-    } catch (error) {
-      return next(new InternalServerError(500, error.message));
+    } catch (err) {
+      return next(new InternalServerError(500, (err as Error).message));
     }
   };
 };

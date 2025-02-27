@@ -1,6 +1,6 @@
-import express from 'express';
+import {Router} from 'express';
 import OptimisationRoutes from './optimisation.routes';
-const router = express.Router();
+const router = Router();
 
 router.get('/hello', (req, res) => {
   res.send('Hello World!');

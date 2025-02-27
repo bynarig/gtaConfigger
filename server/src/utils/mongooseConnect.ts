@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
-import dotenv from 'dotenv'; // connecting dotenv
-dotenv.config();
+import {config} from 'dotenv'; // connecting dotenv
+config();
 
 import models from '#/models/index';
 import {logger} from '#/utils/logger.js';

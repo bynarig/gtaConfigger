@@ -1,9 +1,9 @@
-import express from 'express';
+import express, {json} from 'express';
 import {logger} from '#/utils/logger';
-import router from './router/router';
+import router from '#/routes/router';
 import cors from 'cors';
 // import redis from '#/middlewares/redisMiddleware';
-import {DB, connect} from '#/utils/mongooseConnect';
+import {connect} from '#/utils/mongooseConnect';
 import cookieParser from 'cookie-parser'; // DB connecting
 // const { models } = DB;
 const app = express();
@@ -25,7 +25,7 @@ const port = 8905;
 connect();
 app.use(cors());
 // app.use(redis());
-app.use(express.json());
+app.use(json());
 app.use(cookieParser());
 app.use('/', router);
 

@@ -1,5 +1,5 @@
 import fs from 'fs';
-import xml2js from 'xml2js';
+import {Parser, Builder} from 'xml2js';
 import {logger} from '#utils/logger';
 import {Request, Response} from 'express';
 
@@ -8,7 +8,7 @@ class OptimiserController {
     const xmlFile = './src/data/preview-settings.xml'; // replace with the actual file path
     const xmlData = fs.readFileSync(xmlFile, 'utf8');
     // Parse the XML file
-    const parser = new xml2js.Parser();
+    const parser = new Parser();
     let result;
     parser.parseString(xmlData, (err, response) => {
       if (err) {
@@ -26,7 +26,7 @@ class OptimiserController {
       result.Settings.graphics[0].LodScale[0].$.value = loadDistances.terrain;
 
       // Convert the modified XML object back to a string
-      const builder = new xml2js.Builder();
+      const builder = new Builder();
       const modifiedXml = builder.buildObject(result);
       logger.info('Setting generated');
       res.send(modifiedXml);

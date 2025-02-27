@@ -54,7 +54,6 @@ export default [
   // },
   ...compat
     .extends(
-      'plugin:prettier/recommended',
       'eslint:recommended',
       'plugin:import/recommended',
       'plugin:jsx-a11y/recommended',
@@ -93,8 +92,6 @@ export default [
     },
 
     rules: {
-      'react/jsx-uses-react': 'error',
-      'react/jsx-uses-vars': 'error',
       'jsx-a11y/control-has-associated-label': 'off',
       'jsx-a11y/click-events-have-key-events': 'off',
       'class-methods-use-this': 'warn',
@@ -105,19 +102,6 @@ export default [
       'jsx-a11y/label-has-associated-control': 'warn',
       'no-nested-ternary': 'warn',
       'no-underscore-dangle': 'warn',
-      'react/function-component-definition': 'off',
-      'react/jsx-props-no-spreading': 'warn',
-      'react/no-unescaped-entities': 'warn',
-      'react/prop-types': 'warn',
-      'react/react-in-jsx-scope': 'off',
-      'react/require-default-props': 'off',
-
-      'react/no-unstable-nested-components': [
-        'warn',
-        {
-          allowAsProps: true,
-        },
-      ],
 
       '@typescript-eslint/no-use-before-define': [
         'error',
