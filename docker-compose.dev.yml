@@ -1,0 +1,31 @@
+version: '3'
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile  # Dockerfile path (default)
+      args:
+        NODE_ENV: development  # Build argument for development
+    ports:
+      - "8905:8905"
+    volumes:
+      - ./server:/app  # Mounts server code from host to container
+      - /app/node_modules  # Prevents overwriting node_modules
+    command: nodemon src/app.ts  # Start with nodemon for hot-reload
+    environment:
+      - NODE_ENV=development
+
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile  # Dockerfile path (default)
+      args:
+        NODE_ENV: development  # Build argument for development
+    ports:
+      - "8904:8904"
+    volumes:
+      - ./client:/app  # Mounts client code from host to container
+      - /app/node_modules
+    command: pnpm run dev  # Runs Vite dev server for hot-reload
+    environment:
+      - NODE_ENV=development

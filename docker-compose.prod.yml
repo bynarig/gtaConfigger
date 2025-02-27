@@ -1,0 +1,25 @@
+version: '3'
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile  # Dockerfile path (default)
+      args:
+        NODE_ENV: production  # Build argument for production
+    ports:
+      - "8905:8905"
+    environment:
+      - NODE_ENV=production
+    command: pnpm run prod  # Runs production build (esbuild for the server)
+
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile  # Dockerfile path (default)
+      args:
+        NODE_ENV: production  # Build argument for production
+    ports:
+      - "8904:8904"
+    environment:
+      - NODE_ENV=production
+    command: pnpm run prod  # Runs Vite production build and serve

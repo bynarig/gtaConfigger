@@ -1,0 +1,6 @@
+.husky
+node_modules
+dist
+.prettierignore
+.prettierrc
+eslint.config.mjs
