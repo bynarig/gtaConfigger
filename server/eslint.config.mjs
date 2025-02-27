@@ -1,5 +1,4 @@
 import prettier from 'eslint-plugin-prettier';
-import react from 'eslint-plugin-react';
 import globals from 'globals';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -21,7 +20,6 @@ export default [
   {
     plugins: {
       prettier,
-      react,
     },
 
     languageOptions: {
@@ -31,32 +29,32 @@ export default [
       },
     },
   },
-  ...compat.extends('plugin:cypress/recommended').map((config) => ({
-    ...config,
-    files: ['./cypress/**'],
-  })),
-  {
-    files: ['./cypress/**'],
-
-    plugins: ['cypress'],
-
-    languageOptions: {
-      globals: {
-        context: 'readonly',
-        before: 'readonly',
-        cy: 'readonly',
-        it: 'readonly',
-      },
-    },
-
-    rules: {
-      'class-methods-use-this': 'off',
-      'no-return-assign': 'off',
-    },
-  },
+  // ...compat.extends('plugin:cypress/recommended').map((config) => ({
+  //   ...config,
+  //   files: ['./cypress/**'],
+  // })),
+  // {
+  //   files: ['./cypress/**'],
+  //
+  //   plugins: ['cypress'],
+  //
+  //   languageOptions: {
+  //     globals: {
+  //       context: 'readonly',
+  //       before: 'readonly',
+  //       cy: 'readonly',
+  //       it: 'readonly',
+  //     },
+  //   },
+  //
+  //   rules: {
+  //     'class-methods-use-this': 'off',
+  //     'no-return-assign': 'off',
+  //   },
+  // },
   ...compat
     .extends(
-      'prettier',
+      'plugin:prettier/recommended',
       'eslint:recommended',
       'plugin:import/recommended',
       'plugin:jsx-a11y/recommended',

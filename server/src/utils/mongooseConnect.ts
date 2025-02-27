@@ -12,7 +12,7 @@ export async function connect() {
     logger.info('DB connected');
     return true;
   } catch (err) {
-    logger.info(`DB didn't connect ${err}`);
+    logger.error(`DB didn't connect ${err}`);
     return false;
   }
 }
