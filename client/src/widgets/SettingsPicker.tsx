@@ -3,6 +3,7 @@ import {useState} from 'react';
 import Range from '#/shared/ui/Range';
 import {sendSettingsToServer} from '#/entities/fileOptimisation';
 import Button from '#/shared/ui/Button';
+import FileInput from '#/shared/ui/FileInput';
 
 export default function SettingsPicker() {
   const getFirstValue = (value: number | number[]): number => {
@@ -29,10 +30,12 @@ export default function SettingsPicker() {
   };
 
   return (
-    <div className="ml-7 mt-5 mb-5">
+    <form className="ml-7 mt-5 mb-5">
+      <FileInput/>
+
       <div className="distance-sliders">
         <h3>{Translate('MainPage.player')}</h3>
-        <div className="slider-info flex">
+        <div className="flex">
           <Range
             min={-3}
             max={3}
@@ -44,7 +47,7 @@ export default function SettingsPicker() {
         </div>
 
         <h3>{Translate('MainPage.vehicles')}</h3>
-        <div className="slider-info flex">
+        <div className="flex">
           <Range
             min={-3}
             max={3}
@@ -56,7 +59,7 @@ export default function SettingsPicker() {
         </div>
 
         <h3>{Translate('MainPage.terrain')}</h3>
-        <div className="slider-info flex">
+        <div className="flex">
           <Range
             min={-3}
             max={3}
@@ -79,6 +82,7 @@ export default function SettingsPicker() {
             )
           }
           name="Generate setings"
+          // type="submit"
         />
         {fileUrl && (
           <a href={fileUrl} download="settings.xml">
@@ -86,6 +90,6 @@ export default function SettingsPicker() {
           </a>
         )}
       </div>
-    </div>
+    </form>
   );
 }

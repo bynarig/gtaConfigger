@@ -1,10 +1,10 @@
 import express from 'express';
-import OptimisationRoutes from "./optimisation.routes.js";
+import OptimisationRoutes from './optimisation.routes';
 const router = express.Router();
 
 router.get('/hello', (req, res) => {
-  res.send('Hello World!')
-})
+  res.send('Hello World!');
+});
 
 router.use('/optimisation', OptimisationRoutes);
 

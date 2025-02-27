@@ -1,4 +1,4 @@
-import SettingsPicker from '#/widgets/settingsPicker';
+import SettingsPicker from '#/widgets/SettingsPicker';
 import Navbar from '#/widgets/Navbar';
 import Footer from '#/widgets/Footer';
 

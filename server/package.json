@@ -3,34 +3,46 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon ./src/app.js",
+    "dev": "tsx -r tsconfig-paths/register  src/app.ts --watch",
     "test": "jest",
-    "prod": "esbuild src/app.js --bundle --platform=node --outdir=dist --minify --sourcemap && node ./dist/app.js"
+    "prod": "esbuild src/app.ts --bundle --platform=node --outdir=dist --minify --sourcemap && node ./dist/app.js",
+    "pretty": "prettier './**/**.{ts,tsx,js,jsx,mjs,cjs,css,scss,sass,md,*.json,.prettierrc,.lintstagedrc,.babelrc,.eslintrc,*.webmanifest}'",
+    "format": "pnpm pretty --write"
   },
   "dependencies": {
     "body-parser": "^1.20.3",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
+    "eslint": "^9.21.0",
     "express": "^4.21.2",
     "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.10.1",
     "passport-google-oauth20": "^2.0.0",
+    "prettier": "^3.5.2",
     "redis": "^4.7.0",
     "winston": "^3.17.0",
     "xml2js": "^0.6.2"
   },
   "devDependencies": {
-    "serve": "^14.2.4",
-    "esbuild": "^0.25.0",
-    "nodemon": "^3.1.9",
     "@babel/core": "^7.26.9",
     "@babel/preset-env": "^7.26.9",
     "@jest/globals": "^29.7.0",
+    "@types/cookie-parser": "^1.4.8",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/xml2js": "^0.4.14",
     "babel-jest": "^29.7.0",
+    "esbuild": "^0.25.0",
     "jest": "^29.7.0",
-    "supertest": "^7.0.0"
+    "nodemon": "^3.1.9",
+    "serve": "^14.2.4",
+    "supertest": "^7.0.0",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "tsx": "^4.19.3"
   },
   "imports": {
     "#utils/*": "./src/utils/*",

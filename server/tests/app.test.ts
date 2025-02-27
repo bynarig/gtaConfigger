@@ -1,9 +1,9 @@
-import { afterAll, beforeAll, describe, expect, it, jest } from "@jest/globals";
+import {afterAll, beforeAll, describe, expect, it, jest} from '@jest/globals';
 import request from 'supertest';
-import app from '../src/app.js'; // Adjust the path as needed
+import app from '#/app.ts'; // Adjust the path as needed
 
 // Mock the redis middleware to avoid connection issues in tests
-jest.mock('#middlewares/redisMiddleware.js', () => {
+jest.mock('#/middlewares/redisMiddleware.ts', () => {
   return jest.fn(() => (req, res, next) => next());
 });
 

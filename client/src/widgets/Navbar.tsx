@@ -2,9 +2,11 @@ import LanguageSwitch from '#/features/languageSwitch';
 import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from '#/shared/store';
 import {login, logout} from '#/shared/store/user/userSlice';
+import {Translate} from '#/shared/locale';
 
 export default function Navbar() {
   const isLoggedIn = useSelector((state: RootState) => state.user.isLogged);
+  const userAvatar = useSelector((state: RootState) => state.user.avatar);
   const dispatch = useDispatch();
   const userData = {
     id: '123',
@@ -12,6 +14,7 @@ export default function Navbar() {
     surname: 'Doe',
     email: 'john.doe@example.com',
     role: 'user',
+    avatar: 'https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp',
   };
 
   return (
@@ -34,7 +37,7 @@ export default function Navbar() {
 
                 <img
                   alt="Tailwind CSS Navbar component"
-                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                  src={userAvatar} />
               </div>
             </div>
             <ul
@@ -48,7 +51,7 @@ export default function Navbar() {
                   <span className="badge">New</span>
                 </button>
               </li>
-              <li><a>Settings</a></li>
+              <li><a>My files</a></li>
               <li>
                 <button onClick={() => dispatch(logout())}>Logout</button>
               </li>
