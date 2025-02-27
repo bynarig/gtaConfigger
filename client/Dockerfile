@@ -7,7 +7,7 @@ FROM node:23-alpine3.20
 WORKDIR /app
 
 # Install pnpm globally
-RUN npm install -g pnpm
+RUN npm install -g pnpm && npm cache clean --force
 
 # Build argument to determine environment (default to production)
 ARG NODE_ENV=production
@@ -16,7 +16,7 @@ ARG NODE_ENV=production
 ENV NODE_ENV=$NODE_ENV
 
 # Install development dependencies in development mode
-RUN if [ "$NODE_ENV" = "development" ]; then npm install -g vite; fi
+RUN if [ "$NODE_ENV" = "development" ]; then npm install -g vite else npm install -g serve && npm install -g vite; fi
 
 # Copy package.json and pnpm-lock.yaml for caching layers
 COPY package.json pnpm-lock.yaml ./

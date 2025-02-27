@@ -11,7 +11,7 @@ services:
     volumes:
       - ./server:/app  # Mounts server code from host to container
       - /app/node_modules  # Prevents overwriting node_modules
-    command: nodemon src/app.ts  # Start with nodemon for hot-reload
+    command: pnpm run dev  # Start with nodemon for hot-reload
     environment:
       - NODE_ENV=development
 
