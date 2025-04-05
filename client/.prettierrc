@@ -7,18 +7,5 @@
   "arrowParens": "always",
   "bracketSpacing": false,
   "printWidth": 100,
-  "endOfLine": "lf",
-  "importOrder": [
-    "<THIRD_PARTY_MODULES>",
-    "#/pages",
-    "^#/widgets",
-    "^#/features",
-    "^#/entities",
-    "^#/shared",
-    "^[./]"
-  ],
-  "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true,
-  "importOrderGroupNamespaceSpecifiers": true,
-  "importOrderCaseInsensitive": true
+  "endOfLine": "lf"
 }

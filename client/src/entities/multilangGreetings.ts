@@ -60,7 +60,6 @@ const greetings = [
   'Halo', // Indonesian
   'Helo', // Malay
   'Kamusta', // Filipino (Tagalog)
-  'Kumusta', // Cebuano
   'Salam', // Javanese
   'Halo', // Sundanese
   'नमस्कार', // Nepali
@@ -70,26 +69,6 @@ const greetings = [
   'ಹಲೋ', // Konkani
   'ഹലോ', // Kodava
   'हॅलो', // Kashmiri
-  'हॅलो', // Garhwali
-  'हॅलो', // Kumaoni
-  'हॅलो', // Kangri
-  'हॅलो', // Bundeli
-  'हॅलो', // Bagheli
-  'हॅलो', // Chhattisgarhi
-  'हॅलो', // Malvi
-  'हॅलो', // Nimadi
-  'हॅलो', // Harauti
-  'हॅलो', // Mewari
-  'हॅलो', // Wagdi
-  'हॅलो', // Ahirani
-  'हॅलो', // Dhundhari
-  'हॅलो', // Marwari
-  'हॅलो', // Mewati
-  'हॅलो', // Shekhawati
-  'हॅलो', // Bagri
-  'हॅलो', // Braj Bhasha
-  'हॅलो', // Kannauji
-  'हॅलो', // Awadhi
 ];
 
 
